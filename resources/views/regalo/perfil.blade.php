@@ -7,14 +7,14 @@
 @section('content')
 <div class="container">
     <div class="content">
-        <h1>Lista de Regalos</h1>
+        <h1>Perfil de {{ $usuario->name }} </h1>
 
-        <h4><a href="{{ route('perfil.ver', ['id' => $usuario->id]) }}"> Pasale este link a tus amigos </a> </h4>
+        <h2>Lista de Regalos</h2>
 
             @php
                 $poseoEsteDinero = 2400; // El dinero que tienes, lo puedes cambiar dinámicamente
             @endphp
-        <h4>Por ahora me regalaron $ {{ $poseoEsteDinero }}
+        <h4>{{ $usuario->name }} ha recibido hasta ahora $ {{ $poseoEsteDinero }}
         </h4>
 
         @if ($regalos->isEmpty())
